@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/dukeguo/imu_utils/devel/lib/libpolynomial.a  CMakeFiles/polynomial.dir/src/math_utils/Polynomial.cpp.o
+/usr/bin/ranlib /home/dukeguo/imu_utils/devel/lib/libpolynomial.a

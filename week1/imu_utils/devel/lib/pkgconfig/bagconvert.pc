@@ -1,0 +1,8 @@
+prefix=/home/dukeguo/imu_utils/devel
+
+Name: bagconvert
+Description: Description of bagconvert
+Version: 1.0.0
+Cflags: -I/home/dukeguo/imu_utils/src/kalibr_allan/bagconvert/src -I/usr/include
+Libs: -L/home/dukeguo/imu_utils/devel/lib /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libboost_filesystem.so /usr/lib/x86_64-linux-gnu/libboost_thread.so /usr/lib/x86_64-linux-gnu/libboost_date_time.so /usr/lib/x86_64-linux-gnu/libboost_chrono.so /usr/lib/x86_64-linux-gnu/libboost_atomic.so /usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: roscpp nav_msgs std_msgs sensor_msgs nav_msgs rosbag

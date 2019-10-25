@@ -1,0 +1,2 @@
+code_utils:imu_utils:kalibr_allan/bagconvert
+-DCATKIN_DEVEL_PREFIX=/home/dukeguo/imu_utils/devel -DCMAKE_INSTALL_PREFIX=/home/dukeguo/imu_utils/install -G Unix Makefiles
