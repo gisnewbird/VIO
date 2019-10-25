@@ -1,7 +1,7 @@
 clear 
 close all
 
-dt = dlmread('/home/dukeguo/imu_utils/src/imu_utils/data/data_imutest_gyr_t.txt');         
+dt = dlmread('/home/dukeguo/imu_utils/src/imu_utils/data/data_imutest_gyr_t.txt');
 data_x = dlmread('/home/dukeguo/imu_utils/src/imu_utils/data/data_imutest_gyr_x.txt'); 
 data_y= dlmread('/home/dukeguo/imu_utils/src/imu_utils/data/data_imutest_gyr_y.txt'); 
 data_z = dlmread('/home/dukeguo/imu_utils/src/imu_utils/data/data_imutest_gyr_z.txt'); 

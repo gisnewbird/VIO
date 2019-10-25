@@ -50,11 +50,11 @@ void IMU::addIMUnoise(MotionData& data)
 {
     std::random_device rd;
     std::default_random_engine generator_(rd());
-    std::normal_distribution<double> noise(0.0, 1.0);
+    std::normal_distribution<double> noise(0.0, 1.0); //正态分布
 
     Eigen::Vector3d noise_gyro(noise(generator_),noise(generator_),noise(generator_));
     Eigen::Matrix3d gyro_sqrt_cov = param_.gyro_noise_sigma * Eigen::Matrix3d::Identity();
-    data.imu_gyro = data.imu_gyro + gyro_sqrt_cov * noise_gyro / sqrt( param_.imu_timestep ) + gyro_bias_;
+    data.imu_gyro = data.imu_gyro + gyro_sqrt_cov * noise_gyro / sqrt( param_.imu_timestep ) + gyro_bias_;//陀螺仪噪声离散化
 
     Eigen::Vector3d noise_acc(noise(generator_),noise(generator_),noise(generator_));
     Eigen::Matrix3d acc_sqrt_cov = param_.acc_noise_sigma * Eigen::Matrix3d::Identity();
@@ -148,12 +148,15 @@ void IMU::testImu(std::string src, std::string dist)
         dq.z() = dtheta_half.z();
         dq.normalize();
         
-        //　imu 动力学模型　参考svo预积分论文
+        //　imu 动力学模型　参考svo预积分论文 欧拉积分
         Eigen::Vector3d acc_w = Qwb * (imupose.imu_acc) + gw;  // aw = Rwb * ( acc_body - acc_bias ) + gw
         Qwb = Qwb * dq;        
         Pwb = Pwb + Vw * dt + 0.5 * dt * dt * acc_w;
         Vw = Vw + acc_w * dt;
-        
+
+        // 中值积分法
+
+
         //　按着imu postion, imu quaternion , cam postion, cam quaternion 的格式存储，由于没有cam，所以imu存了两次
         save_points<<imupose.timestamp<<" "
                    <<Qwb.w()<<" "

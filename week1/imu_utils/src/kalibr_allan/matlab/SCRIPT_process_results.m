@@ -40,12 +40,12 @@ fprintf('=> plotting gyroscope.\n')
 
 %% Print out for easy copying
 fprintf('=> final results\n');
-% Accelerometer
-fprintf('accelerometer_noise_density = %.8f\n',sigma_a);
-fprintf('accelerometer_random_walk   = %.8f\n',sigma_ba);
-% Gryoscope
-fprintf('gyroscope_noise_density     = %.8f\n',sigma_g);
-fprintf('gyroscope_random_walk       = %.8f\n',sigma_ga);
+% Accelerometer加速计
+fprintf('accelerometer_noise_density = %.8f\n',sigma_a); //加速计bias
+fprintf('accelerometer_random_walk   = %.8f\n',sigma_ba);//加速计bias随机游走
+% Gryoscope陀螺仪
+fprintf('gyroscope_noise_density     = %.8f\n',sigma_g); //陀螺仪bias
+fprintf('gyroscope_random_walk       = %.8f\n',sigma_ga);//陀螺仪bias随机游走
 
 
 
