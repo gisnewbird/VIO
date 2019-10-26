@@ -134,7 +134,6 @@ void IMU::testImu(std::string src, std::string dist)
     Eigen::Vector3d temp_a;
     Eigen::Vector3d theta;
     for (int i = 1; i < imudata.size(); ++i) {
-
         MotionData imupose = imudata[i];
 
         //delta_q = [1 , 1/2 * thetax , 1/2 * theta_y, 1/2 * theta_z]
@@ -145,35 +144,108 @@ void IMU::testImu(std::string src, std::string dist)
         dq.y() = dtheta_half.y();
         dq.z() = dtheta_half.z();
         dq.normalize();
-        
-        /// imu 动力学模型 欧拉积分
+
+        // imu 动力学模型 欧拉积分
         Eigen::Vector3d acc_w = Qwb * (imupose.imu_acc) + gw;  // aw = Rwb * ( acc_body - acc_bias ) + gw
         Qwb = Qwb * dq;
         Pwb = Pwb + Vw * dt + 0.5 * dt * dt * acc_w;
         Vw = Vw + acc_w * dt;
-        
-        /// 中值积分
-
-        //　按着imu postion, imu quaternion , cam postion, cam quaternion 的格式存储，由于没有cam，所以imu存了两次
         save_points<<imupose.timestamp<<" "
-                   <<Qwb.w()<<" "
-                   <<Qwb.x()<<" "
-                   <<Qwb.y()<<" "
-                   <<Qwb.z()<<" "
-                   <<Pwb(0)<<" "
-                   <<Pwb(1)<<" "
-                   <<Pwb(2)<<" "
-                   <<Qwb.w()<<" "
-                   <<Qwb.x()<<" "
-                   <<Qwb.y()<<" "
-                   <<Qwb.z()<<" "
-                   <<Pwb(0)<<" "
-                   <<Pwb(1)<<" "
-                   <<Pwb(2)<<" "
-                   <<std::endl;
-
+                       <<Qwb.w()<<" "
+                       <<Qwb.x()<<" "
+                       <<Qwb.y()<<" "
+                       <<Qwb.z()<<" "
+                       <<Pwb(0)<<" "
+                       <<Pwb(1)<<" "
+                       <<Pwb(2)<<" "
+                       <<Qwb.w()<<" "
+                       <<Qwb.x()<<" "
+                       <<Qwb.y()<<" "
+                       <<Qwb.z()<<" "
+                       <<Pwb(0)<<" "
+                       <<Pwb(1)<<" "
+                       <<Pwb(2)<<" "
+                       <<std::endl;
     }
+    std::cout<< "test　end" <<std::endl;
+    save_points.close();
 
-    std::cout<<"test　end"<<std::endl;
-
+    // 中值积分，需要重新加载并且将所有参数初始化，不然会与之前的数据冲突
+	// 导致模拟的数据是在偏离的基础上进行的
+    std::vector<MotionData> imudata_mid;
+    LoadPose(src, imudata_mid);
+    std::ofstream save_midPoints;
+    save_midPoints.open("mid"+dist);
+    dt = param_.imu_timestep;
+    Pwb = init_twb_;              // position :    from  imu measurements
+    Qwb = (init_Rwb_);            // quaterniond:  from imu measurements
+    Vw = init_velocity_;          // velocity  :   from imu measurements
+    Eigen::Vector3d acc_w_before; // mid-point
+    Eigen::Vector3d acc_w_mid; // mid-point
+    for (int i = 1; i < imudata_mid.size(); i++) {
+        MotionData imupose = imudata_mid[i];
+        //delta_q = [1 , 1/2 * thetax , 1/2 * theta_y, 1/2 * theta_z]
+        Eigen::Quaterniond dq;
+        if (i == 1) {
+            Eigen::Vector3d dtheta_half = imupose.imu_gyro * dt / 2.0; //1/2 * w * delta(t)
+            dq.w() = 1;
+            dq.x() = dtheta_half.x();
+            dq.y() = dtheta_half.y();
+            dq.z() = dtheta_half.z();
+            dq.normalize();
+            Eigen::Vector3d acc_w = Qwb * (imupose.imu_acc) + gw;  // aw = Rwb * ( acc_body - acc_bias ) + gw
+            Qwb = Qwb * dq;
+            Pwb = Pwb + Vw * dt + 0.5 * dt * dt * acc_w;
+            Vw = Vw + acc_w * dt;
+            save_midPoints << imupose.timestamp << " "
+                        << Qwb.w() << " "
+                        << Qwb.x() << " "
+                        << Qwb.y() << " "
+                        << Qwb.z() << " "
+                        << Pwb(0) << " "
+                        << Pwb(1) << " "
+                        << Pwb(2) << " "
+                        << Qwb.w() << " "
+                        << Qwb.x() << " "
+                        << Qwb.y() << " "
+                        << Qwb.z() << " "
+                        << Pwb(0) << " "
+                        << Pwb(1) << " "
+                        << Pwb(2) << " "
+                        << std::endl;
+        }
+        if (i > 1) {
+            MotionData imupose_before = imudata_mid[i - 1];
+            Eigen::Vector3d dtheta_half = ((imupose.imu_gyro + imupose_before.imu_gyro) / 2.0) * dt / 2.0; //1/2 * w * delta(t)
+            dq.w() = 1;
+            dq.x() = dtheta_half.x();
+            dq.y() = dtheta_half.y();
+            dq.z() = dtheta_half.z();
+            dq.normalize();
+            Eigen::Vector3d acc_w = Qwb * (imupose.imu_acc) + gw;  // aw = Rwb * ( acc_body - acc_bias ) + gw
+            Eigen::Vector3d acc_w_before = Qwb * (imupose_before.imu_acc) + gw;
+            acc_w_mid = (acc_w + acc_w_before) / 2.0;
+            Qwb = Qwb * dq;
+            Pwb = Pwb + Vw * dt + 0.5 * dt * dt * acc_w_mid;
+            Vw = Vw + acc_w_mid * dt;
+            save_midPoints << imupose.timestamp << " "
+                        << Qwb.w() << " "
+                        << Qwb.x() << " "
+                        << Qwb.y() << " "
+                        << Qwb.z() << " "
+                        << Pwb(0) << " "
+                        << Pwb(1) << " "
+                        << Pwb(2) << " "
+                        << Qwb.w() << " "
+                        << Qwb.x() << " "
+                        << Qwb.y() << " "
+                        << Qwb.z() << " "
+                        << Pwb(0) << " "
+                        << Pwb(1) << " "
+                        << Pwb(2) << " "
+                        << std::endl;
+        }
+    }
+    std::cout << "test　end" << std::endl;
+    save_midPoints.close();
 }
