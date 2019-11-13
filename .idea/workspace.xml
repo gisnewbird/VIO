@@ -10,15 +10,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84fd05aa-d3f0-478f-9261-00a78d005e96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/VIO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week1/Allan方差参数含义.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week1/course2_hw_new/vio_data_simulation-ros_version/src/imu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/week1/course2_hw_new/vio_data_simulation-ros_version/src/imu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week1/imu_utils/src/imu_utils/scripts/draw_allan.m" beforeDir="false" afterPath="$PROJECT_DIR$/week1/imu_utils/src/imu_utils/scripts/draw_allan.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week1/imu_utils/src/kalibr_allan/matlab/SCRIPT_process_results.m" beforeDir="false" afterPath="$PROJECT_DIR$/week1/imu_utils/src/kalibr_allan/matlab/SCRIPT_process_results.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week1/week1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/week1/week1.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/doc.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/CompilerIdC.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/CompilerIdC.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdC/Debug/CompilerIdC.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/CompilerIdCXX.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/VCTargetsPath.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/VCTargetsPath.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/3.14.5/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/build/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/cmake/FindEigen3.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/hessian_nullspace_test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4/nullspace_test/readme.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/course4作业.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week3/微信图片_20191112211604.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VIO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VIO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +91,19 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/week3/course4" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\duke\Desktop\VIO\week3\course4" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -67,6 +128,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571996970191</updated>
       <workItem from="1571996971357" duration="4270000" />
+      <workItem from="1573630223111" duration="4344000" />
+      <workItem from="1573634750252" duration="89000" />
     </task>
     <servers />
   </component>
@@ -78,7 +141,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
