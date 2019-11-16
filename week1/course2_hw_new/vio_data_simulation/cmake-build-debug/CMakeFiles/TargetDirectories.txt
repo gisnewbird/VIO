@@ -1,3 +1,0 @@
-/home/dukeguo/文档/VIO/week1/course2_hw_new/vio_data_simulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/dukeguo/文档/VIO/week1/course2_hw_new/vio_data_simulation/cmake-build-debug/CMakeFiles/data_gen.dir
-/home/dukeguo/文档/VIO/week1/course2_hw_new/vio_data_simulation/cmake-build-debug/CMakeFiles/edit_cache.dir

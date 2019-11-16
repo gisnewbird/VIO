@@ -1,0 +1,8 @@
+prefix=/home/dukeguo/imu_utils/install
+
+Name: code_utils
+Description: Description of code_utils
+Version: 0.0.0
+Cflags: -I/home/dukeguo/imu_utils/install/include
+Libs: -L/home/dukeguo/imu_utils/install/lib -lpolynomial -lcv_utils -lpnp
+Requires: roscpp std_msgs

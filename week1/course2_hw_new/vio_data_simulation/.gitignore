@@ -1,6 +1,0 @@
-*.py[cod]
-build/
-bin/keyframe/
-bin/*.txt
-*~
-*.DS_Store

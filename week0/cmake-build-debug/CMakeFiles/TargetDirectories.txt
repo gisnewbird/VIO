@@ -1,3 +1,0 @@
-/home/dukeguo/文档/VIO/week0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/dukeguo/文档/VIO/week0/cmake-build-debug/CMakeFiles/Week0.dir
-/home/dukeguo/文档/VIO/week0/cmake-build-debug/CMakeFiles/edit_cache.dir

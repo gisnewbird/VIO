@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/Week0.dir/R_Quaternion_update.cpp.o  -o Week0 

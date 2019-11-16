@@ -1,8 +1,0 @@
-prefix=/home/dukeguo/imu_utils/install
-
-Name: imu_utils
-Description: Description of imu_utils
-Version: 0.1.0
-Cflags: 
-Libs: -L/home/dukeguo/imu_utils/install/lib 
-Requires: 
