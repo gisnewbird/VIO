@@ -8,14 +8,14 @@
 using namespace myslam::backend;
 using namespace std;
 
-/*
+/* 定义一个结构体
  * Frame : 保存每帧的姿态和观测
  */
 struct Frame {
     Frame(Eigen::Matrix3d R, Eigen::Vector3d t) : Rwc(R), qwc(R), twc(t) {};
-    Eigen::Matrix3d Rwc;
-    Eigen::Quaterniond qwc;
-    Eigen::Vector3d twc;
+    Eigen::Matrix3d Rwc; // 旋转
+    Eigen::Quaterniond qwc; // 四元数
+    Eigen::Vector3d twc; // 平移
 
     unordered_map<int, Eigen::Vector3d> featurePerId; // 该帧观测到的特征以及特征id
 };
@@ -74,9 +74,11 @@ int main() {
     for (size_t i = 0; i < cameras.size(); ++i) {
         shared_ptr<VertexPose> vertexCam(new VertexPose());
         Eigen::VectorXd pose(7);
+        // 平移3个+旋转四元数xyzw duke20191121
         pose << cameras[i].twc, cameras[i].qwc.x(), cameras[i].qwc.y(), cameras[i].qwc.z(), cameras[i].qwc.w();
         vertexCam->SetParameters(pose);
 
+        //LM算法在零空间产生微小量的偏移，解决方式就是在初始帧fixed duke20191121
 //        if(i < 2)
 //            vertexCam->SetFixed();
 
@@ -94,9 +96,9 @@ int main() {
         //假设所有特征点的起始帧为第0帧， 逆深度容易得到
         Eigen::Vector3d Pw = points[i];
         Eigen::Vector3d Pc = cameras[0].Rwc.transpose() * (Pw - cameras[0].twc);
-        noise = noise_pdf(generator);
-        double inverse_depth = 1. / (Pc.z() + noise);
-//        double inverse_depth = 1. / Pc.z();
+        noise = noise_pdf(generator);   // 产生随机噪声
+        double inverse_depth = 1. / (Pc.z() + noise);   // 加入噪声后的逆深度值
+//        double inverse_depth = 1. / Pc.z();   // 逆深度值
         noise_invd.push_back(inverse_depth);
 
         // 初始化特征 vertex
