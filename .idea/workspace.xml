@@ -9,14 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84fd05aa-d3f0-478f-9261-00a78d005e96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week4/5_Backend_Solver.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/week4/5_Backend_Solver.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week4/VINS论文推导及代码解析_V13_190317.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/week4/VINS论文推导及代码解析_V13_190317.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week4/hw_course5_new/RAL18_Zhang.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/week4/hw_course5_new/RAL18_Zhang.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week4/hw_course5_new/app/TestMonoBA.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/week4/hw_course5_new/app/TestMonoBA.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="84fd05aa-d3f0-478f-9261-00a78d005e96" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +74,7 @@
       <workItem from="1574320271241" duration="1770000" />
       <workItem from="1574324864116" duration="1976000" />
       <workItem from="1574342112031" duration="2380000" />
+      <workItem from="1574746138722" duration="191000" />
     </task>
     <servers />
   </component>

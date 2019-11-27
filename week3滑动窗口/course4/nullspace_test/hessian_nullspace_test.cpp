@@ -66,11 +66,11 @@ int main()
             jacobian_Ti << -x* y * fx/z_2, (1+ x*x/z_2)*fx, -y/z*fx, fx/z, 0 , -x * fx/z_2,
                             -(1+y*y/z_2)*fy, x*y/z_2 * fy, x/z * fy, 0,fy/z, -y * fy/z_2;
 
-            H.block(i * 6, i * 6, 6, 6) += jacobian_Ti.transpose() * jacobian_Ti;
+            H.block(i * 6, i * 6, 6, 6) += jacobian_Ti.transpose() * jacobian_Ti;//左上角
             /// 请补充完整作业信息矩阵块的计算
-	        H.block(j * 3 + 6 * poseNums, j * 3 + 6 * poseNums, 3, 3) += jacobian_Pj.transpose() * jacobian_Pj;
-	        H.block(j * 3 + 6 * poseNums, i * 6, 3, 6) += jacobian_Pj.transpose() * jacobian_Ti;
-            H.block(i * 6, j * 3 + 6 * poseNums, 6, 3) += jacobian_Ti.transpose() * jacobian_Pj;
+	        H.block(j * 3 + 6 * poseNums, j * 3 + 6 * poseNums, 3, 3) += jacobian_Pj.transpose() * jacobian_Pj;// 右下角
+	        H.block(j * 3 + 6 * poseNums, i * 6, 3, 6) += jacobian_Pj.transpose() * jacobian_Ti; // 左下角
+            H.block(i * 6, j * 3 + 6 * poseNums, 6, 3) += jacobian_Ti.transpose() * jacobian_Pj; // 右上角
         }
     }
 
